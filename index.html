@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Myntra Clone - Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="topbar">
+      <div class="logo">Mynt<span>ra</span></div>
+      <div class="search">
+        <input id="searchInput" type="search" placeholder="Search for products, brands and more" />
+        <button id="searchBtn">Search</button>
+      </div>
+      <div class="header-actions">
+        <button id="loginBtn" class="ghost">Login</button>
+        <button id="cartBtn" class="cart-btn">Cart (<span id="cartCount">0</span>)</button>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <ul>
+        <li><button class="nav-filter" data-filter="all">All</button></li>
+        <li><button class="nav-filter" data-filter="men">Men</button></li>
+        <li><button class="nav-filter" data-filter="women">Women</button></li>
+        <li><button class="nav-filter" data-filter="kids">Kids</button></li>
+        <li><button class="nav-filter" data-filter="beauty">Beauty</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Fresh looks, curated for you</h1>
+        <p>Discover the latest trends — handpicked styles for every mood.</p>
+        <button id="shopNow">Shop Now</button>
+      </div>
+      <div class="hero-image" aria-hidden="true"></div>
+    </section>
+
+    <section class="filters">
+      <label>Sort:
+        <select id="sortSelect">
+          <option value="popular">Popular</option>
+          <option value="low">Price: Low to High</option>
+          <option value="high">Price: High to Low</option>
+        </select>
+      </label>
+      <label>Category:
+        <select id="categorySelect">
+          <option value="all">All</option>
+          <option value="men">Men</option>
+          <option value="women">Women</option>
+          <option value="kids">Kids</option>
+          <option value="beauty">Beauty</option>
+        </select>
+      </label>
+    </section>
+
+    <section class="product-grid" id="productGrid" aria-live="polite">
+      <!-- Product cards injected by JS -->
+    </section>
+  </main>
+
+  <!-- Cart modal -->
+  <div id="cartModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+    <div class="modal-content">
+      <header class="modal-header">
+        <h2 id="cartTitle">Your Cart</h2>
+        <button id="closeCart" class="close">✕</button>
+      </header>
+      <div id="cartItems" class="cart-items"></div>
+      <footer class="modal-footer">
+        <div class="total">Total: ₹<span id="cartTotal">0</span></div>
+        <button id="checkout" class="primary">Checkout</button>
+      </footer>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div>© Demo Myntra Clone · Not for commercial use</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
